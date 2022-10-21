@@ -3,7 +3,7 @@ COMPILER = clang++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra
 
-SRCS =	repertory.cpp
+SRCS =	Contact.cpp phonebook.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
