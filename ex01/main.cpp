@@ -11,7 +11,7 @@ int main()
 		if (data == "ADD")
 			t1.edit_user();
 		if (data == "SEARCH")
-			t1.print_data();
+			t1.print_short_data();
 	}
 	return 0;
 }

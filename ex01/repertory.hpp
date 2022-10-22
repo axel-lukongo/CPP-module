@@ -15,7 +15,8 @@ public:
 	phonebook( void );
 	~phonebook( void );
 	void edit_user(void);
-	void print_data(void);
+	void print_short_data(void);
+	int print_entire_data(void);
 };
 
 
