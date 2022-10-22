@@ -58,10 +58,15 @@ void phonebook::print_short_data(void){
 	{
 		for(int i = 0; i < 8 && this->tab[i][0] != "\0"; i++)
 		{
-			std::cout<<"         "<<i<<"|";
-			std::cout<<"         "<<this->tab[i][0] <<"|";
-			std::cout<<"         "<<this->tab[i][1] <<"|";
-			std::cout<<"         "<<this->tab[i][2] <<"|"<<std::endl;
+			std::cout<< std::setw(10) << i << "|";
+			for(int y = 0; y < 4; y++)
+			{
+				std::cout<< std::setw(10) << this->tab[i][y].substr(0.9);
+				if(this->tab[i][y].length() > 10)
+					std::cout << ".";
+				std::cout << "|";
+			}
+			std::cout << std::endl;
 		}
 		while (!this->print_entire_data())
 		{
