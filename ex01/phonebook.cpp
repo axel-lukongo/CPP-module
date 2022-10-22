@@ -51,9 +51,7 @@ int phonebook::print_entire_data(void){
 void phonebook::print_short_data(void){
 
 	if (this->tab[0][0] == "\0")
-	{
 		std::cout<<"you must add contact"<<std::endl;
-	}
 	else
 	{
 		for(int i = 0; i < 8 && this->tab[i][0] != "\0"; i++)
@@ -61,7 +59,7 @@ void phonebook::print_short_data(void){
 			std::cout<< std::setw(10) << i << "|";
 			for(int y = 0; y < 4; y++)
 			{
-				std::cout<< std::setw(10) << this->tab[i][y].substr(0.9);
+				std::cout<< std::setw(10) << this->tab[i][y].substr(0,9);
 				if(this->tab[i][y].length() > 10)
 					std::cout << ".";
 				std::cout << "|";
