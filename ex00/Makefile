@@ -1,7 +1,7 @@
 NAME = megaphone
-COMPILER = clang++
+COMPILER = c++
 RM = rm -f
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS =	megaphone.cpp
 

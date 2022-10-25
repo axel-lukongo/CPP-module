@@ -1,7 +1,19 @@
-#include"repertory.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 16:20:45 by alukongo          #+#    #+#             */
+/*   Updated: 2022/10/25 16:33:00 by alukongo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include"phonebook.hpp"
 #include<iostream>
 
-void contact:: creat_contact(void){
+void contact:: set_contact(void){
 	std::string str;
 
 	std::cout<<"enter your first name: ";
@@ -25,7 +37,7 @@ void contact:: creat_contact(void){
 		std::cout<<"please enter your darkest secret: ";
 }
 
-std::string contact:: data_user(int i)
+std::string contact:: set_user(int i)
 {
 	return (this->user_data[i]);
 }
