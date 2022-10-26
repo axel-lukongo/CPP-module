@@ -1,9 +1,9 @@
-NAME = repertory
+NAME = exec
 COMPILER = c++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS =	Contact.cpp phonebook.cpp main.cpp
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

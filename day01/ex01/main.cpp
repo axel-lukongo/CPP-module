@@ -6,14 +6,18 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:29:42 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/26 13:08:00 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:42:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"zombie.hpp"
 
 int main(){
-	Zombie *horder = zombieHorde(3, "horder");
-	horder[0].announce();
+	int N = 4;
+	Zombie *horder = zombieHorde(N, "horder");
+	for (int i = 0; i < N; i++)
+	{
+		horder[i].announce();
+	}
 	delete [] horder;
 }

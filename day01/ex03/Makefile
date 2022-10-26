@@ -1,23 +1,23 @@
-NAME = repertory
+NAME = exec
 COMPILER = c++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS =	Contact.cpp phonebook.cpp main.cpp
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
+	@$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	clear
-	$(RM) $(OBJS)
+	@clear
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

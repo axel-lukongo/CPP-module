@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:20:41 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/26 16:50:55 by alukongo         ###   ########.fr       */
+/*   Created: 2022/10/26 14:50:19 by alukongo          #+#    #+#             */
+/*   Updated: 2022/10/26 15:04:01 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"phonebook.hpp"
 #include<iostream>
 
-int main()
-{
-	std::string data;
-	phonebook t1;
-	std::cout<<"*****the program start !*****"<<std::endl;
-	while (std::getline(std::cin, data) && data != "EXIT" && !std::cin.eof())
-	{
-		if (data == "ADD")
-			t1.edit_user();
-		if (data == "SEARCH")
-			t1.print_short_data();
-	}
-	return 0;
+int main(){
+	std::string str = "HI THIS IS BRAIN";
+	std::string* stringPTR = &str;
+	std::string& stringREF = str;
+
+	std::cout << "l'adresse de str est: "<< &str << std::endl;
+	std::cout << "l'adresse du ptr est: "<< stringPTR << std::endl;
+	std::cout << "l'adresse de la REF est: "<< &stringREF << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "valeur de str est: "<< str << std::endl;
+	std::cout << "valeur du ptr est: "<< *stringPTR << std::endl;
+	std::cout << "valeur de la REF est: "<< stringREF << std::endl;
 }
