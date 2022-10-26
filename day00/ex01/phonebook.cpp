@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:19:56 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/25 16:39:06 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:34:01 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void phonebook::print_short_data(void){
 		for(int i = 0; i < 8 && this->tab[i][0] != "\0"; i++)
 		{
 			std::cout<< std::setw(10) << i << "|";
-			for(int y = 0; y < 4; y++)
+			for(int y = 0; y < 3; y++)
 			{
 				std::cout<< std::setw(10) << this->tab[i][y].substr(0,9);
 				if(this->tab[i][y].length() > 10)
