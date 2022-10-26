@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:19:56 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/26 14:34:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:40:20 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int phonebook::print_entire_data(void){
 }
 
 void phonebook::print_short_data(void){
-
 	if (this->tab[0][0] == "\0")
 		std::cout<<"you must add contact"<<std::endl;
 	else
@@ -70,7 +69,10 @@ void phonebook::print_short_data(void){
 			std::cout<< std::setw(10) << i << "|";
 			for(int y = 0; y < 3; y++)
 			{
-				std::cout<< std::setw(10) << this->tab[i][y].substr(0,9);
+				if(this->tab[i][y].size() > 9)
+					std::cout << this->tab[i][y].substr(0,9);
+				else
+					std::cout<< std::setw(10) << this->tab[i][y].substr(0,9);
 				if(this->tab[i][y].length() > 10)
 					std::cout << ".";
 				std::cout << "|";

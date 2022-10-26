@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:20:41 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/25 16:32:52 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:21:17 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 {
 	std::string data;
 	phonebook t1;
-
+	std::cout<<"*****the program start !*****"<<std::endl;
 	while (std::getline(std::cin, data) && data != "EXIT" && !std::cin.eof())
 	{
 		if (data == "ADD")

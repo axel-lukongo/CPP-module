@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repertory.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:20:11 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/25 16:28:12 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:38:49 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@
 
 class phonebook {
 
-public:
+private:
 	std::string tab[200][5];
-
 	int index_user;
-	
+	int print_entire_data(void);
+
+public:
+
 	phonebook( void );
 	~phonebook( void );
 	void edit_user(void);
 	void print_short_data(void);
-	int print_entire_data(void);
 };
 
 
