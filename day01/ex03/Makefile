@@ -3,21 +3,21 @@ COMPILER = c++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp Weapon.cpp HumanB.cpp HumanA.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
+	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@clear
-	@$(RM) $(OBJS)
+	clear
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
