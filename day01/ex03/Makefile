@@ -5,7 +5,9 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS =	main.cpp Weapon.cpp HumanB.cpp HumanA.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+INC = HumanA.hpp HumanB.hpp Weapon.hpp
+
+OBJS = $(SRCS:.cpp=.o) $(INC)
 
 all: $(NAME)
 
@@ -14,7 +16,7 @@ $(NAME): $(OBJS)
 
 clean:
 	clear
-	$(RM) $(OBJS)
+	$(RM) *.o
 
 fclean: clean
 	$(RM) $(NAME)
