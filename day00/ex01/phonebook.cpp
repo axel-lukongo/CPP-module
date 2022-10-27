@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:19:56 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/27 16:59:11 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:04:05 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void phonebook::edit_user(void){
 	t1.set_contact();
 	for (int i = 0; i < 5; i++)
 	{
-		tab[this->index_user][i] = t1.set_user(i);
+		tab[this->index_user][i] = t1.get_user(i);
 	}
 	this->index_user++;
 	if(this->index_user > 7)

@@ -30,7 +30,7 @@ public:
 
 // public:
 // 	void set_contact(void);
-// 	std::string set_user(int i);
+// 	std::string get_user(int i);
 
 // private:
 // 	std::string user_data[5];

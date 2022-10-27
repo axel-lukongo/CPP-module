@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:20:45 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/25 16:33:00 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:04:05 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void contact:: set_contact(void){
 		std::cout<<"please enter your darkest secret: ";
 }
 
-std::string contact:: set_user(int i)
+std::string contact:: get_user(int i)
 {
 	return (this->user_data[i]);
 }
