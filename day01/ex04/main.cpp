@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:35:23 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/28 17:47:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/10/31 16:29:24 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,36 @@
 
 
 int main(int ac, char **av){
-	if (ac != 4)
-		return (0);
-	
-	std::string str = av[1];
-	std::string replace_file = str.append(".replace");
-	std::string other;
-	
-	std::ifstream test (av[1]);
-	// test.open("file.txt");
-	if(test.is_open())
+	if(ac == 4)
 	{
-		// test >> other;
-		while (test >> other)
+		std::string buf, tmp, name;
+		std::ifstream file1(av[1]);
+		name = av[1];
+		std::string str1 = av[2];
+		std::string str2 = av[3];
+		std::ofstream file2 (name.substr(0, name.size()).append(".replace"));
+
+		while (getline(file1, buf))
+			tmp += buf + '\n';
+
+		if(str1 != str2)
 		{
-			std::cout << other << std::endl;
-			// test >> other;
+			while(1)
+			{
+				int i = tmp.find(str1);
+				if (i >= std::string::npos)
+					break;
+				tmp.erase(i, str1.size());
+				buf = tmp.insert(i, str2);
+			}
 		}
+		else
+			buf = tmp;
+		file2 << buf;
+		file1.close();
+		file2.close();
 	}
-	
-	// std::ofstream file (replace_file);
-
-
-
-	// if (file.is_open())
-	// {
-	// 	std::cout << "is open"<< std::endl;
-	// 	file << "i write something here"<< std::endl;
-	// }
+	else
+		std::cout << "wrong argument" << std::endl;
+	return (1);
 }
