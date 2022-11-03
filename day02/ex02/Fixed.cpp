@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/02 20:00:47 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/02 20:26:11 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+#define POINT_FIXE (1 << 8)
 
 Fixed::Fixed(void): _fixe_value(0){
 	std::cout << "Default constructor called" <<std::endl;
@@ -27,10 +29,32 @@ Fixed & Fixed:: operator =(Fixed const & val){
 	return *this;
 }
 
+Fixed::Fixed(const int fixe){
+	std::cout << "Int constructor called" << std::endl;
+	_fixe_value = fixe << _nbr_bits;
+}
+
+Fixed::Fixed(const float fixe){
+	std::cout << "Float constructor called" << std::endl;
+	_fixe_value = std::roundf(fixe * POINT_FIXE);
+}
+
 
 Fixed::~Fixed(void){
 	std::cout << "Destructor called" <<std::endl;
 	return ;
+}
+
+
+
+
+
+float Fixed::toFloat( void ) const{
+	return (float) _fixe_value / POINT_FIXE;
+}
+
+int Fixed::toInt( void ) const{
+	return _fixe_value >> _nbr_bits;
 }
 
 
@@ -39,6 +63,11 @@ void Fixed::setRawBits( int const raw ){
 }
 
 int Fixed::getRawBits( void ) const{
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (_fixe_value);
+}
+
+std::ostream & operator << (std::ostream & o, Fixed const & val){
+	o << val.toFloat();
+	return o;
 }

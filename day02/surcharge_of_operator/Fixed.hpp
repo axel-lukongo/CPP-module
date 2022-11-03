@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:02 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/02 20:03:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/02 20:00:46 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ class Fixed{
 	
 	private:
 		int _fixe_value;
-		int const static _nbr_bits = 8;
+		int const static nbr_bits;
 
 	public:
-		Fixed(void);
-		Fixed(const Fixed & val);
-		
-		Fixed & operator =(Fixed const & val);
+		Fixed(int nb);
 		~Fixed();
+		int operator +(Fixed const & val);
 		int getRawBits( void ) const;
-		void setRawBits( int const raw );
 };
 
 #endif // !FIXED_HPP

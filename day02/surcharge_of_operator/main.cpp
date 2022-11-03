@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 17:51:02 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/02 20:03:01 by alukongo         ###   ########.fr       */
+/*   Created: 2022/11/01 17:51:00 by alukongo          #+#    #+#             */
+/*   Updated: 2022/11/02 15:06:03 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
+int main( void ) {
 
-class Fixed{
+	Fixed a(4);
+	Fixed b(6);
+	int test;
 	
-	private:
-		int _fixe_value;
-		int const static _nbr_bits = 8;
-
-	public:
-		Fixed(void);
-		Fixed(const Fixed & val);
-		
-		Fixed & operator =(Fixed const & val);
-		~Fixed();
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-};
-
-#endif // !FIXED_HPP
+	test = a + b;
+	std::cout << test << std::endl;
+return 0;
+}
