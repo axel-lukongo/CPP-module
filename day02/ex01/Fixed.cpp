@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/03 17:17:17 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:13:32 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,7 @@ Fixed::Fixed(const int fixe){
  */
 Fixed::Fixed(const float fixe){
 	std::cout << "Float constructor called" << std::endl;
-	// std::cout << "         "<<fixe << std::endl;
-	// _fixe_value = std::roundf(fixe * (1 << _nbr_bits));
 	_fixe_value = std::roundf(fixe * (1 << _nbr_bits));
-	std::cout <<"------float------" <<_fixe_value << std::endl;
 }
 
 
@@ -84,7 +81,6 @@ float Fixed::toFloat( void ) const{
  *
  */
 int Fixed::toInt( void ) const{
-	// std::cout<<"--------toInt--"<< _fixe_value<<"   ";
 	return _fixe_value >> _nbr_bits;
 }
 
@@ -94,7 +90,7 @@ void Fixed::setRawBits( int const raw ){
 }
 
 int Fixed::getRawBits( void ) const{
-	// std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixe_value);
 }
 
