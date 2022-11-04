@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/03 20:46:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:30:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Fixed::Fixed(const int fixe){
 
 
 Fixed::Fixed(const float fixe){
+	// std::cout<< "it here"<< fixe << std::endl;
 	_fixe_value = std::roundf(fixe * (1 << _nbr_bits));
 }
 
@@ -86,17 +87,17 @@ bool Fixed::operator!=(Fixed const & rhs) const{
 }
 
 Fixed Fixed::operator+(Fixed const & rhs) const{
-	return(this->toFloat() + rhs.getRawBits());
+	return(this->toFloat() + rhs.toFloat());
 }
 
 Fixed Fixed::operator-(Fixed const & rhs) const{
-	return(this->toFloat() - rhs.getRawBits());
+	return(this->toFloat() - rhs.toFloat());
 }
 Fixed Fixed::operator*(Fixed const & rhs) const{
-	return(this->toFloat() * rhs.getRawBits());
+	return(this->toFloat() * rhs.toFloat());
 }
 Fixed Fixed::operator/(Fixed const & rhs) const{
-	return(this->toFloat() / rhs.getRawBits());
+	return(this->toFloat() / rhs.toFloat());
 }
 
 Fixed Fixed::operator++(int i){
