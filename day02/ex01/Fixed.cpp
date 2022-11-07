@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/03 18:13:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:52:13 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,11 @@ int Fixed::getRawBits( void ) const{
 }
 
 std::ostream & operator << (std::ostream & o, Fixed const & val){
+	// cout << "op-----------"<< val.toFloat();
 	o << val.toFloat();
 	return o;
 }
+
+// Fixed Fixed::operator*(Fixed const & rhs) const{
+// 	return(this->toFloat() * rhs.getRawBits());
+// }

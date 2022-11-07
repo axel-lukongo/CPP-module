@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:51:02 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/02 20:01:38 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:52:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Fixed{
 		Fixed & operator =(Fixed const & val);
 		~Fixed();
 
+		// Fixed operator*(Fixed const & rhs) const;
 		float toFloat( void ) const;
 		int toInt( void ) const;
 		int getRawBits( void ) const;

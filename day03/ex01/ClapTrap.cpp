@@ -6,13 +6,14 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:25:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/07 01:05:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/07 01:10:19 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string n):_Name(n){
+	std::cout << "ClapTrap constructor has been called" << std::endl;
 	_Hit_point = 100;
 	_Energy = 50;
 	_Attack = 20;
@@ -35,7 +36,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap & ins){
 
 
 ClapTrap::~ClapTrap(void){
-	
+	std::cout << "ClapTrap destructor has been called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target){
