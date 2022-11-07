@@ -10,7 +10,10 @@ class ClapTrap{
 		int _Energy;
 		int _Attack;
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string);
+		ClapTrap(ClapTrap & ins);
+		ClapTrap & operator=(ClapTrap & ins);
 		~ClapTrap(void);
 
 		void attack(const std::string& target);

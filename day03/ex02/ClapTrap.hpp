@@ -5,6 +5,7 @@
 class ClapTrap{
 
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string);
 		ClapTrap(ClapTrap & ins);
 		ClapTrap & operator =(ClapTrap & ins);

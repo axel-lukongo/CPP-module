@@ -25,4 +25,4 @@ re: fclean all
 
 .PHONY: all re clean fclean test
 
-.SILENT: $(OBJS)
+# .SILENT: $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 23:09:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/07 00:05:48 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:32:11 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ScavTrap: public ClapTrap{
 
 	public:
 		ScavTrap();
-		ScavTrap(std::string );
+		ScavTrap(std::string n);
 		ScavTrap(ScavTrap & ins );
 		ScavTrap & operator = (ScavTrap & ins );
 		~ScavTrap();

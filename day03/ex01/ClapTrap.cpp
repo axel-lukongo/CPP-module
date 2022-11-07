@@ -6,11 +6,20 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:25:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/07 01:10:19 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:42:49 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void){
+	std::cout << "ClapTrap constructor has been called" << std::endl;
+	_Name = "Default";
+	_Hit_point = 100;
+	_Energy = 50;
+	_Attack = 20;
+}
+
 
 ClapTrap::ClapTrap(std::string n):_Name(n){
 	std::cout << "ClapTrap constructor has been called" << std::endl;
@@ -77,7 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount){
 	else if (_Energy <= 0)
 		std::cout << "not anought energy" << std::endl<< std::endl;
 	else
-		std::cout << "you are Dead" << std::endl<< std::endl;
+		std::cout << _Name <<" is dead" << std::endl<< std::endl;
 }
 
 
