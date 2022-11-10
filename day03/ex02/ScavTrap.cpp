@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 23:09:24 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/10 13:09:44 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:56:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ void ScavTrap::attack(const std::string& target){
 		std::cout << _Name <<" is dead" << std::endl<< std::endl;
 }
 
+
 void ScavTrap::guardGate(){
-	if (_Hit_point > 0)
+	if (_Hit_point > 0 && _Energy > 0)
 		std::cout << _Name << "ScavTrap enter in guardGate mode" << std::endl << std::endl;
 	else
-		std::cout << _Name << " canot enter in guardGate mode because he is dead" << std::endl << std::endl;
+		std::cout << _Name << " canot enter in guardGate mode because he is dead or don't have Energy" << std::endl << std::endl;
 }
