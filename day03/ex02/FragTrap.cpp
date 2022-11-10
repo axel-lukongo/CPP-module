@@ -6,25 +6,25 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:18:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/10 13:07:29 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:20:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-// #include "ScavTrap.hpp"
+// #include "ClapTrap.hpp"
 
 FragTrap::FragTrap(void){
 	std::cout << "FlagTrap default constructor has been called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string n) : ScavTrap(n){
+FragTrap::FragTrap(std::string n) : ClapTrap(n){
 	_Hit_point = 100;
 	_Energy = 100;
 	_Attack = 30;
 	std::cout << "FlagTrap constructor has been called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap & ins):ScavTrap(ins){
+FragTrap::FragTrap(const FragTrap & ins):ClapTrap(ins){
 	std::cout << "FlagTrap copy constructor has been called" << std::endl;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;

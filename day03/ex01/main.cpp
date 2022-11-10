@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:41:09 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/07 01:03:33 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:49:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@ int main(){
 	t1.attack("DENJIRO");
 	t1.takeDamage(40);
 	t1.takeDamage(40);
-	t1.beRepaired(1);
-	t1.beRepaired(1);
-	t1.beRepaired(1);
-	t1.takeDamage(25);
-	t1.takeDamage(1);
-	t1.guardGate();
-	t1.attack("RAZMO");
-	t1.attack("RAPIDO");
-	t1.beRepaired(1);
-	t1.beRepaired(1);
+	t1.beRepaired(40);
+	t1.attack("DENJIRO");
 }

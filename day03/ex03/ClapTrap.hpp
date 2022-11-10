@@ -6,7 +6,7 @@ class ClapTrap{
 
 	public:
 		ClapTrap(void);
-		explicit ClapTrap(std::string);
+		ClapTrap(std::string);
 		ClapTrap(const ClapTrap & ins);
 		ClapTrap & operator =(const ClapTrap & ins);
 		virtual ~ClapTrap(void);
@@ -19,9 +19,9 @@ class ClapTrap{
 
 	protected:
 		std::string _Name;
-		int _Hit_point;
-		int _Energy;
-		int _Attack;
+		unsigned int _Hit_point;
+		unsigned int _Energy;
+		unsigned int _Attack;
 
 };
 
