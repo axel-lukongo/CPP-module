@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 23:09:24 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/10 13:16:15 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:48:53 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
 
 ScavTrap & ScavTrap::operator = (const ScavTrap & ins ){
 	std::cout << "copy assignat has been called" << std::endl;
+	if (this == &ins)
+		return *this;
 	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;
@@ -63,7 +65,7 @@ void ScavTrap::attack(const std::string& target){
 }
 
 void ScavTrap::guardGate(){
-	if (_Hit_point > 0)
+	if (_Hit_point > 0 && _Energy > 0)
 		std::cout << _Name << "ScavTrap enter in guardGate mode" << std::endl << std::endl;
 	else
 		std::cout << _Name << " canot enter in guardGate mode because he is dead" << std::endl << std::endl;

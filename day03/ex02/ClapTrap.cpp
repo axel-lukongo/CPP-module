@@ -6,26 +6,26 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:25:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/10 13:04:46 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:45:53 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include"ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void){
 	std::cout << "ClapTrap constructor has been called" << std::endl;
 	_Name = "Default";
-	_Hit_point = 100;
-	_Energy = 50;
-	_Attack = 20;
+	_Hit_point = 10;
+	_Energy = 10;
+	_Attack = 0;
 }
 
 
 ClapTrap::ClapTrap(std::string n):_Name(n){
 	std::cout << "ClapTrap constructor has been called" << std::endl;
-	_Hit_point = 100;
-	_Energy = 50;
-	_Attack = 20;
+	_Hit_point = 10;
+	_Energy = 10;
+	_Attack = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap & ins){
@@ -36,6 +36,8 @@ ClapTrap::ClapTrap(const ClapTrap & ins){
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap & ins){
+	if (this == &ins)
+		return(*this);
 	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;
@@ -49,7 +51,7 @@ ClapTrap::~ClapTrap(void){
 }
 
 void ClapTrap::attack(const std::string& target){
-	if (_Energy > 0)
+	if (_Energy > 0 &&_Hit_point > 0)
 	{
 		std::cout << "ClapTrap " << _Name << " attack " << target << " causin " << _Attack << " point of dammage !"<< std::endl;
 		std::cout << _Name << " Hit point: " << _Hit_point << std::endl;
@@ -62,7 +64,7 @@ void ClapTrap::attack(const std::string& target){
 
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (_Hit_point > 0){
+	if (_Hit_point > 0 && _Hit_point > 0){
 		_Hit_point -= amount;
 		std::cout << _Name << " take dammage of " << amount <<" point" << std::endl;
 		std::cout << _Name << " Hit point: " << _Hit_point << std::endl << std::endl;

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:18:06 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/10 13:16:39 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:54:20 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ FragTrap::FragTrap(const FragTrap & ins){
 
 FragTrap& FragTrap::operator = (const FragTrap & ins){
 	std::cout << "FlagTrap copy assignation constructor has been called" << std::endl;
+	if (this == &ins)
+		return *this;
 	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;
@@ -40,7 +42,8 @@ FragTrap& FragTrap::operator = (const FragTrap & ins){
 }
 
 void FragTrap::highFivesGuys(void){
-	std::cout << "high five please" << std::endl;
+	if (_Hit_point > 0 && _Hit_point > 0)
+		std::cout << "high five please" << std::endl;
 }
 
 FragTrap::~FragTrap(void){
