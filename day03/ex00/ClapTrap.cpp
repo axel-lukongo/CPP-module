@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:25:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/07 21:48:45 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:00:57 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ ClapTrap::ClapTrap(std::string n):_Name(n){
 	_Attack = 20;
 }
 
-ClapTrap::ClapTrap(ClapTrap & ins){
-	_Name = ins._Name();
+ClapTrap::ClapTrap(const ClapTrap & ins){
+	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;
 	_Attack = ins._Attack;
 }
 
-ClapTrap& ClapTrap::operator=(ClapTrap & const ins){
-	_Name = ins._Name();
+ClapTrap& ClapTrap::operator=(const ClapTrap & ins){
+	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;
 	_Attack = ins._Attack;

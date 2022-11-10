@@ -7,8 +7,8 @@ class ClapTrap{
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string);
-		ClapTrap(ClapTrap & ins);
-		ClapTrap & operator =(ClapTrap & ins);
+		ClapTrap(const ClapTrap & ins);
+		ClapTrap & operator =(const ClapTrap & ins);
 		~ClapTrap(void);
 
 		void attack(const std::string& target);

@@ -11,16 +11,14 @@ class ClapTrap{
 		int _Attack;
 	public:
 		ClapTrap(void);
-		ClapTrap(std::string);
-		ClapTrap(ClapTrap & ins);
-		ClapTrap & operator=(ClapTrap & ins);
+		ClapTrap(std::string );
+		ClapTrap(const ClapTrap & ins);
+		ClapTrap & operator=(const ClapTrap & ins);
 		~ClapTrap(void);
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-
 };
 
 #endif // !ClapTrap_H

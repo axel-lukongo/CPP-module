@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 23:09:24 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/08 18:58:27 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:16:15 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name){
 
 }
 
-ScavTrap & ScavTrap::operator = (ScavTrap & ins ){
+ScavTrap & ScavTrap::operator = (const ScavTrap & ins ){
 	std::cout << "copy assignat has been called" << std::endl;
 	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
@@ -33,7 +33,7 @@ ScavTrap & ScavTrap::operator = (ScavTrap & ins ){
 	return *this;
 }
 
-ScavTrap::ScavTrap(ScavTrap & ins ){
+ScavTrap::ScavTrap(const ScavTrap & ins ){
 	_Name = ins._Name;
 	_Hit_point = ins._Hit_point;
 	_Energy = ins._Energy;

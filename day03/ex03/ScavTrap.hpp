@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 23:09:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/08 18:37:08 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:16:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class ScavTrap: virtual public ClapTrap{
 	public:
 		ScavTrap();
 		explicit ScavTrap(std::string n);
-		ScavTrap(ScavTrap & ins );
-		ScavTrap & operator = (ScavTrap & ins );
+		ScavTrap(const ScavTrap & ins );
+		ScavTrap & operator = (const ScavTrap & ins );
 		virtual ~ScavTrap();
 		virtual void attack(const std::string& target);
 		void guardGate();

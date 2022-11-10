@@ -7,13 +7,13 @@ class ClapTrap{
 	public:
 		ClapTrap(void);
 		explicit ClapTrap(std::string);
-		ClapTrap(ClapTrap & ins);
-		ClapTrap & operator =(ClapTrap & ins);
+		ClapTrap(const ClapTrap & ins);
+		ClapTrap & operator =(const ClapTrap & ins);
 		virtual ~ClapTrap(void);
 
-	virtual	void attack(const std::string& target);
-	virtual	void takeDamage(unsigned int amount);
-	virtual	void beRepaired(unsigned int amount);
+		virtual	void attack(const std::string& target);
+		virtual	void takeDamage(unsigned int amount);
+		virtual	void beRepaired(unsigned int amount);
 		
 		std::string get_name(void);
 

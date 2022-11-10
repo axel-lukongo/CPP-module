@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:29:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/08 19:04:18 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:17:08 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 
 DiamondTrap::DiamondTrap():ClapTrap(), FragTrap(), ScavTrap(){
-	_name = "";
+	_name = "Default DiamondTrap";
 	_Hit_point = FragTrap::_Hit_point;
 	_Energy = ScavTrap::_Energy;
 	_Attack = FragTrap::_Attack;
@@ -29,6 +29,24 @@ DiamondTrap::DiamondTrap(const std::string name):_name(name), ClapTrap(name + "_
 	_Attack = FragTrap::_Attack;
 	std::cout << "DiamondTrap constructor has been called" << std::endl;
 }
+
+DiamondTrap::DiamondTrap(const DiamondTrap & ins){
+	*this = ins;
+	std::cout << "DiamondTrap copy constructor has been called" << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator = (const DiamondTrap & ins){
+	*this = ins;
+	return(*this);
+	std::cout << "DiamondTrap assign constructor has been called" << std::endl;
+}
+
+
+DiamondTrap::~DiamondTrap(void){
+	std::cout << "destructor has been called" << std::endl;
+}
+
+
 
 void DiamondTrap::attack(const std::string& target){
 	ScavTrap::attack(target);

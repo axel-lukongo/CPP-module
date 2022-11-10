@@ -1,5 +1,5 @@
 NAME = exec
-COMPILER = c++
+CXX = c++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
@@ -12,7 +12,7 @@ OBJS = $(SRCS:.cpp=.o) $(INC)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	clear
@@ -44,7 +44,7 @@ re: fclean all
 # 	$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 
 # 	#OBJET/%.o : %.cpp $(INC) 
-# 	#	$(COMPILER) -c $< -o $@
+# 	#	$(CXX) -c $< -o $@
 
 # clean:
 # 	clear
