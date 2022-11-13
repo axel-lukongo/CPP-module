@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 14:32:14 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:35:39 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ i->makeSound(); //will output the cat sound! j->makeSound();
 std::cout << meta->getType() << "     ptr" << std::endl;
 meta->makeSound();
 
+delete j;
+delete i;
+delete meta;
 return 0; 
 }
