@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:48 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 02:03:21 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:11:22 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 Cat::Cat(){
 	std::cout << "Cat default constructor has been called" << std::endl;
 	_brain = new Brain();
+	_brain->set_ideas();
+	// _brain->ideas[0] = " je suis test ";
 	_type = "Cat";
 }
 
@@ -25,11 +27,12 @@ Cat::Cat(std::string n){
 	_type = "Cat";
 }
 
-Cat::Cat(const Cat & ins)
+Cat::Cat(const Cat & ins) : Animal(ins)
 {
 	std::cout << "Cat copy constructor has been called" << std::endl;
-	*this = ins;
-	// _type = "Cat";
+	_type = ins._type;
+	_brain = new Brain(*ins._brain);
+	// std::cout << this->getBrain() << std::endl;
 }
 
 Cat & Cat::operator=(const Cat & ins)
@@ -44,7 +47,8 @@ Cat & Cat::operator=(const Cat & ins)
 
 Cat::~Cat(){
 	std::cout << "Cat destructor has been called" << std::endl;
-	delete _brain;
+	if (_brain)
+		delete _brain;
 }
 
 

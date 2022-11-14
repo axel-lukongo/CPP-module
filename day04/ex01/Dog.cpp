@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 02:03:44 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:48:12 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ Dog::Dog(std::string n){
 	_type = "Dog";
 }
 
-Dog::Dog(const Dog & ins)
+Dog::Dog(const Dog & ins): Animal(ins)
 {
 	std::cout << "Dog copy constructor has been called" << std::endl;
-	*this = ins;
+	_type = ins._type;
+	_brain = new Brain(*ins._brain);
 }
 
 Dog & Dog::operator=(const Dog & ins)
