@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:48:31 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 14:28:42 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 01:38:05 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal{
 		Animal(std::string );
 		Animal(const Animal & ins);
 		Animal & operator = (const Animal & ins);
-		~Animal();
+		virtual ~Animal();
 		std::string getType();
 		virtual void makeSound() const;
 		virtual const std::string & getType() const;

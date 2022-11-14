@@ -5,7 +5,7 @@
 class Brain{
 	public:
 		Brain();
-		~Brain();
+		virtual ~Brain();
 		Brain(const Brain & ins);
 		Brain & operator = (const Brain & ins);
 		std::string ideas[100];
