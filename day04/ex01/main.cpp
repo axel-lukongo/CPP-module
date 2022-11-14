@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 19:22:35 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:49:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main()
 	Cat cat2(cat1);
 	std::cout << cat1.getBrain() << std::endl << std::endl;
 	std::cout << cat2.getBrain() << std::endl << std::endl;
-	std::cout << cat1.getBrain() << std::endl << std::endl;
 	
 	delete j;
 	delete i;

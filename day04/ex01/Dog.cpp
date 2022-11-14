@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 18:48:12 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:51:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Dog & Dog::operator=(const Dog & ins)
 	if (this == &ins)
 		return *this;
 	_type = ins._type;
-	_brain = ins._brain;
+	_brain = new Brain(*ins._brain);
 	return *this;
 }
 

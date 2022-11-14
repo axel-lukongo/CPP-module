@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:48 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 19:11:22 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:51:01 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ Cat & Cat::operator=(const Cat & ins)
 	if (this == &ins)
 		return *this;
 	_type = ins._type;
+	_brain = new Brain(*ins._brain);
 	return *this;
 }
 
