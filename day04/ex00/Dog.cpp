@@ -6,12 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 14:25:29 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:03:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
+
 Dog::Dog(){
 	std::cout << "Dog default constructor has been called" << std::endl;
 	_type = "Dog";
@@ -25,15 +26,18 @@ Dog::Dog(std::string n){
 Dog::Dog(const Dog & ins)
 {
 	std::cout << "Dog copy constructor has been called" << std::endl;
-	_type = "Dog";
+	*this = ins;
 }
 
 Dog & Dog::operator=(const Dog & ins)
 {
 	std::cout << "Dog assign constructor has been called" << std::endl;
-	_type = "Dog";
+	if (this == &ins)
+		return *this;
+	_type = ins._type;
 	return *this;
 }
+
 
 Dog::~Dog(){
 	std::cout << "Dog destructor has been called" << std::endl;

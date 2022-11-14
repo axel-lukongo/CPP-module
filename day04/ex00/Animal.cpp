@@ -6,11 +6,12 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:43:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 14:28:59 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:04:30 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Animal.hpp"
+
 Animal::Animal(){
 	std::cout << "Animal default constructor has been called" << std::endl;
 	_type = "Animal";
@@ -21,17 +22,20 @@ Animal::Animal(std::string n){
 	_type = "Animal";
 }
 
-Animal::Animal(const Animal & ins){
+Animal::Animal(const Animal & ins)
+{
 	std::cout << "Animal copy constructor has been called" << std::endl;
-	_type = "Animal";
+	*this = ins;
 }
 
-Animal & Animal:: operator = (const Animal & ins){
+Animal & Animal::operator=(const Animal & ins)
+{
 	std::cout << "Animal assign constructor has been called" << std::endl;
-	_type = "Animal";
+	if (this == &ins)
+		return *this;
+	_type = ins._type;
 	return *this;
 }
-
 
 Animal::~Animal(){
 	std::cout << "Animal destructor has been called" << std::endl;

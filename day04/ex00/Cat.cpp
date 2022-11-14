@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:48 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 14:25:06 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/13 16:03:11 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ Cat::Cat(std::string n){
 Cat::Cat(const Cat & ins)
 {
 	std::cout << "Cat copy constructor has been called" << std::endl;
-	_type = "Cat";
+	*this = ins;
 }
 
 Cat & Cat::operator=(const Cat & ins)
 {
 	std::cout << "Cat assign constructor has been called" << std::endl;
-	_type = "Cat";
+	if (this == &ins)
+		return *this;
+	_type = ins._type;
 	return *this;
 }
 
