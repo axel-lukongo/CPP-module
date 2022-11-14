@@ -6,11 +6,11 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:43:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 20:09:02 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 20:19:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
+#include "Animal.hpp"
 
 Animal::Animal(){
 	std::cout << "Animal default constructor has been called" << std::endl;

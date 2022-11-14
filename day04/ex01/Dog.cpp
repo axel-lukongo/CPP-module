@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 19:51:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 20:47:43 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 Dog::Dog(){
 	std::cout << "Dog default constructor has been called" << std::endl;
 	_brain = new Brain();
+	_brain->set_ideas();
 	_type = "Dog";
 }
 
 Dog::Dog(std::string n){
 	std::cout << "Dog constructor has been called" << std::endl;
 	_brain = new Brain();
+	_brain->set_ideas();
 	_type = "Dog";
 }
 
