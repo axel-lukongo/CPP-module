@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 01:38:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 02:07:29 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ int main()
 		}
 	for(int i; i < 10; i++)
 		delete animals_array[i];
+	
+	std::cout << std::endl << std::endl;
+	Cat *cat1 = new Cat();
+	std::cout << cat1->getBrain() << std::endl << std::endl;
+	delete cat1;
+
 	return(1);
 }
 

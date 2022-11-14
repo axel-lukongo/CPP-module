@@ -3,6 +3,8 @@
 
 Brain::Brain(){
 	std::cout << "Brain default constructor has been called" << std::endl;
+	for (int i =0; i < 100; i++)
+		ideas[i] = "im in the brain";
 }
 
 Brain::Brain(const Brain & ins)
@@ -16,6 +18,14 @@ Brain & Brain::operator=(const Brain & ins)
 	return *this;
 }
 
+std::ostream &operator<<(std::ostream &out, const Brain &brain) {
+	out << "[ ";
+	for(int i = 0; i < 100; ++i) {
+		out << brain.ideas[i] << " ,";
+	}
+	out << " ]" << std::endl;
+	return out;
+}
 
 Brain::~Brain(){
 	std::cout << "Brain destructor has been called" << std::endl;

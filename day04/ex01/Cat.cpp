@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:48 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 18:18:41 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/14 02:03:21 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ Cat::~Cat(){
 
 void Cat:: makeSound() const{
 	std::cout << "miiiaouuu" << std::endl << std::endl;
+}
+
+Brain& Cat::getBrain(){
+	return *_brain;
 }
 
 
