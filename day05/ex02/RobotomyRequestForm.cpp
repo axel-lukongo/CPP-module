@@ -9,10 +9,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string name): Form(name, 45, 72){
 	_target = name;
 }
 
-// RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & in){
-// 	std::cout << "Robotomy copy constructor" << std::endl;
-// 	*this = in;
-// }
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & in):Form(in){
+	std::cout << "Robotomy copy constructor" << std::endl;
+	*this = in;
+}
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &in){
 std::cout << "Robotomy assign constructor" << std::endl;
