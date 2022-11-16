@@ -6,50 +6,24 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/15 17:00:53 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/16 01:48:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
+#include"Form.hpp"
 
 int main(){
-	try{
-		Bureaucrat t1("johnson", -1);
+	try
+	{
+		Bureaucrat perso1("jefrey", 25);
+		Form mandat("mandat", 24, 24);
+		mandat.beSigned(perso1);
+		mandat.signForm();
 	}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';
-	}
-
-	try{
-		Bureaucrat t1("RAZMO", 150);
-		t1.increment();
-		std::cout << t1 << std::endl;
-	}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';
-	}
-
-	try{
-		Bureaucrat t1("jefry", 23);
-		std::cout << t1 << std::endl;
-	}
-	catch(const std::exception& e){
+	catch(const std::exception& e)
+	{
 		std::cerr << e.what() << '\n';
 	}
 	
-	Bureaucrat boby("boby", 150);
-	boby.decrement();
-	std::cout << boby << std::endl;
-
-	boby.increment();
-	std::cout << boby << std::endl;
-	
-	
-	try{
-		boby.increment();
-	}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << boby << std::endl;
 }

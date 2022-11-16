@@ -6,54 +6,53 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/15 19:49:00 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/16 01:47:24 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
 
 
-Bureaucrat::Bureaucrat(/* args */)
+Bureaucrat::Bureaucrat()
 {
-	std::cout << "Default constructor has been called" << std::endl;
+	std::cout << "Bureaucrat Default constructor has been called" << std::endl;
 }
 Bureaucrat::Bureaucrat(std::string name,int grade):_name(name){
-	std::cout << "constructor has been called" << std::endl;
+	std::cout << "Bureaucrat constructor has been called" << std::endl;
 		if (grade < 1)
-			throw GradeTooLowException();
-		else if (grade > 150)
 			throw GradeTooHighException();
+		else if (grade > 150)
+			throw GradeTooLowException();
 		else
 			_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & ins){
-	std::cout << "Copy constructor has been called" << std::endl;
+	std::cout << "Bureaucrat Copy constructor has been called" << std::endl;
 	*this = ins;
 }
 Bureaucrat& Bureaucrat::operator =(const Bureaucrat & ins){
-	std::cout << "assign constructor has been called" << std::endl;
-	*this = ins;
+	std::cout << "Bureaucrat assign constructor has been called" << std::endl;
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "destructor has been called" << std::endl;
+	std::cout << "Bureaucrat destructor has been called" << std::endl;
 }
 
 void Bureaucrat::increment(){
 	if (_grade < 150)
 		_grade += 1;
 	else
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 }
 
 void Bureaucrat::decrement(){
 	if (_grade > 1)
 		_grade -= 1;
 	else
-		throw GradeTooLowException();
+		throw GradeTooHighException();
 }
 
 int Bureaucrat::get_grade() const {

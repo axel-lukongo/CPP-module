@@ -14,7 +14,7 @@ public:
 	Bureaucrat& operator =(const Bureaucrat & ins);
 	~Bureaucrat();
 	int get_grade() const;
-	std::string get_name() const;
+	virtual std::string get_name() const;
 	void increment();
 	void decrement();
 
