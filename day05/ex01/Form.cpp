@@ -4,9 +4,9 @@ Form::Form(std::string name, int grade_exec, int grade_sign):
 _name(name), _grade_exec(_grade_exec), _grade_sign(grade_sign), _is_signe(false){
 	std::cout << "constructor has been called" << std::endl;
 		if (grade_exec < 1 || grade_sign < 1)
-			throw Bureaucrat::GradeTooLowException();
-		else if (grade_exec > 150 || grade_sign > 150)
 			throw Bureaucrat::GradeTooHighException();
+		else if (grade_exec > 150 || grade_sign > 150)
+			throw Bureaucrat::GradeTooLowException();
 }
 
 Form::Form(const Form & ins):
