@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 19:49:56 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:40:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 
 int main()
 {
+
+	//************deep copy************//
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+	//************deep copy************//
 	Animal* animals_array[10];
 	for(int i; i < 10; i++){
 		if (i < 5)

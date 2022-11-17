@@ -17,6 +17,10 @@ Brain::Brain(const Brain & ins)
 Brain & Brain::operator=(const Brain & ins)
 {
 	std::cout << "Brain assign constructor has been called" << std::endl;
+	if (this == &ins)
+		return *this;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = ins.ideas[i];
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 20:47:43 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:41:32 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ Dog & Dog::operator=(const Dog & ins)
 	std::cout << "Dog assign constructor has been called" << std::endl;
 	if (this == &ins)
 		return *this;
-	_type = ins._type;
-	_brain = new Brain(*ins._brain);
+	this->_type = ins._type;
+	this->_brain = new Brain(*ins._brain);
+	// *this->_brain = *ins._brain;
 	return *this;
 }
 
