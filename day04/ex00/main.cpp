@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:38:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 01:32:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:36:33 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "WrongDog.hpp"
 
 int main() {
 
@@ -23,16 +26,6 @@ int main() {
 const Animal* meta = new Animal(); 
 const Animal* j = new Dog();
 const Animal* i = new Cat();
-
-// std::cout << t1.getType() << " " << std::endl;
-// t1.makeSound(); //will output the dog sound! j->makeSound();
-
-// std::cout << dog1.getType() << " " << std::endl;
-// dog1.makeSound(); //will output the cat sound! j->makeSound();
-
-// std::cout << cat1.getType() << " " << std::endl;
-// cat1.makeSound();
-
 
 std::cout << j->getType() << "    ptr" << std::endl;
 j->makeSound(); //will output the dog sound! j->makeSound();
@@ -46,5 +39,18 @@ meta->makeSound();
 delete j;
 delete i;
 delete meta;
+
+const WrongAnimal *a = new WrongAnimal();
+const WrongAnimal *l = new WrongDog();
+const WrongAnimal *k = new WrongCat();
+const WrongCat test;
+std::cout << std::endl;
+std::cout << l->getType() << " " << std::endl;
+std::cout << k->getType() << " " << std::endl;
+std::cout << test.getType() << " " << std::endl;
+l->makeSound();
+k->makeSound();
+a->makeSound();
+test.makeSound();
 return 0; 
 }
