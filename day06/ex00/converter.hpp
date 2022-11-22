@@ -1,11 +1,16 @@
 #ifndef CONVERT_H
 #define CONVERT_H
 #include<iostream>
+#include <string>
+#include <cstring>
+#include <exception>
+#include <cmath>
+#include<limits>
 
 class converter
 {
 private:
-	char * _str;
+	const std::string _str;
 public:
 	converter(char *str);
 	~converter();

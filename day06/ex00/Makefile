@@ -5,7 +5,7 @@ FLAGS = -Wall -Werror -Wextra -g -std=c++98
 
 SRCS =	main.cpp converter.cpp
 
-# INC = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+INC = converter.hpp
 
 OBJS = $(SRCS:.cpp=.o) #$(INC)
 
