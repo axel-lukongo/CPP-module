@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:51:46 by alukongo          #+#    #+#             */
-/*   Updated: 2022/10/31 20:31:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/26 20:34:54 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Harl::info( void ){
 }
 
 void Harl::warning( void ){
-	std::cout <<"\033[1;34mWARNING:\n\033[0m: I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month."<< std::endl;
+	std::cout <<"\033[1;32mWARNING:\n\033[0m: I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month."<< std::endl;
 	
 }
 
