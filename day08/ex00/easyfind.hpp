@@ -7,18 +7,18 @@
 
 template<typename T>
 void easyfind(T param, int val){
-T::const_iterator it;
-T::const_iterator ite = src.end();
+typename T::const_iterator it;
+typename T::const_iterator ite = param.end();
 
 for (it = param.begin(); it != ite; it++)
 {
 	if (*it == val)
 	{
-		std::cout << *it << std::endl;
+		std::cout << "\033[1;33mOccurence found: \033[0m" << val << std::endl<<std::endl;
 		return ;
 	}
 }
-
+	throw (std::exception());
 }
 
 #endif // !EASYFIND_H
