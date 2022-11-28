@@ -28,9 +28,9 @@ public:
 	}
 
 	Array(Array & cpy){
-		*this = cpy;
 		_tab = NULL;
 		_size = 0;
+		*this = cpy;
 		std::cout << "copy constructor has been called"<< std::endl;
 	}
 
@@ -85,9 +85,9 @@ public:
 
 template<typename T>
 std::ostream &operator<<(std::ostream &out, Array<T> &arr) {
-	for(unsigned int i = arr.size(); i < 3; ++i)
+	for(unsigned int i = 0; i < arr.size(); ++i)
 	{
-		out << "array[ "<< i << "]: ";
+		out << "array["<< i << "]: ";
 		out << arr[i] << std::endl;
 	}
 	return out;
