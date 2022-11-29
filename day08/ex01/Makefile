@@ -3,7 +3,7 @@ CC = c++
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -g -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp Span.cpp
 
 INC = converter.hpp
 
