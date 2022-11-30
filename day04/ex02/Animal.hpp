@@ -17,6 +17,10 @@
 
 class A_Animal{
 	public:
+		A_Animal();
+		A_Animal(A_Animal const &src);
+		A_Animal &operator=(A_Animal const &src);
+		~A_Animal();
 		virtual void makeSound() const = 0;
 		std::string getType();
 		virtual const std::string & getType() const = 0;

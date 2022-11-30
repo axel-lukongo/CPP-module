@@ -1,28 +1,28 @@
 NAME = exec
-CC = c++
+CXX = c++
 RM = rm -f
-FLAGS = -Wall -Werror -Wextra -g -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98
+CPPFLAGS = -MMD
 
-SRCS =	main.cpp
+SRCS = main.cpp
 
-INC = converter.hpp
-
-OBJS = $(SRCS:.cpp=.o) #$(INC)
+OBJS = $(SRCS:.cpp=.o)
+DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	clear
-	$(RM) *.o
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all re clean fclean test
+-include $(DEPS)
 
-.SILENT: $(OBJS)
+.PHONY: all re clean fclean test

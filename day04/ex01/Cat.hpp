@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:57:47 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 02:02:02 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:45:59 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat : public Animal{
 		virtual void makeSound() const;
 		virtual const std::string & getType() const;
 		virtual ~Cat();
-		Brain& getBrain();
+		Brain& getBrain()const;
 	private:
 		Brain * _brain;
 };

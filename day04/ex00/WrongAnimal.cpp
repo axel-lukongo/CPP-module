@@ -18,6 +18,7 @@ WrongAnimal::WrongAnimal(){
 }
 
 WrongAnimal::WrongAnimal(std::string n){
+	(void) n;
 	std::cout << "WrongAnimal constructor has been called" << std::endl;
 	_type = "WrongAnimal";
 }

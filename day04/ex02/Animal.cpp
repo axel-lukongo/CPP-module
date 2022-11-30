@@ -12,38 +12,29 @@
 
 #include"Animal.hpp"
 
-// A_Animal::A_Animal(){
-// 	std::cout << "A_Animal default constructor has been called" << std::endl;
-// 	_type = "A_Animal";
-// }
+A_Animal::A_Animal()
+{
+   std::cout << "Default A_Animal constructor called"  << std::endl;
+   _type = "A_Animal";
+}
 
-// A_Animal::A_Animal(std::string n){
-// 	std::cout << "A_Animal constructor has been called" << std::endl;
-// 	_type = "A_Animal";
-// }
+A_Animal::A_Animal(A_Animal const &src)
+{
+   std::cout << "Copy A_Animal constructor called"  << std::endl;
+   *this = src;
+}
 
-// A_Animal::A_Animal(const A_Animal & ins)
-// {
-// 	std::cout << "A_Animal copy constructor has been called" << std::endl;
-// 	*this = ins;
-// }
+A_Animal::~A_Animal()
+{
+   std::cout << "A_Animal destructor called" << std::endl;
+}
 
-// A_Animal & A_Animal::operator=(const A_Animal & ins)
-// {
-// 	std::cout << "A_Animal assign constructor has been called" << std::endl;
-// 	if (this == &ins)
-// 		return *this;
-// 	_type = ins._type;
-// 	return *this;
-// }
-
-// A_Animal::~A_Animal(){
-// 	std::cout << "A_Animal destructor has been called" << std::endl;
-// }
-
-// void A_Animal::makeSound() const{
-// 	std::cout << "A_Animal have no song"<< std::endl << std::endl;
-// }
+A_Animal &A_Animal::operator=(A_Animal const &src)
+{
+   std::cout << "A_Animal assignment operator called" << std::endl;
+   _type = src._type;
+   return *this;
+}
 
 std::string A_Animal::getType(){
 	return(_type);

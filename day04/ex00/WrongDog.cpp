@@ -8,6 +8,7 @@ WrongDog::WrongDog(){
 }
 
 WrongDog::WrongDog(std::string n){
+	(void) n;
 	std::cout << "WrongDog constructor has been called" << std::endl;
 	_type = "WrongDog";
 }

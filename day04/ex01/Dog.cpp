@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:54 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/17 21:41:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:16:09 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Dog::Dog(std::string n){
 	_brain = new Brain();
 	_brain->set_ideas();
 	_type = "Dog";
+	(void)n;
 }
 
 Dog::Dog(const Dog & ins): Animal(ins)
@@ -32,16 +33,23 @@ Dog::Dog(const Dog & ins): Animal(ins)
 	std::cout << "Dog copy constructor has been called" << std::endl;
 	_type = ins._type;
 	_brain = new Brain(*ins._brain);
+	*this = ins;
 }
 
 Dog & Dog::operator=(const Dog & ins)
 {
-	std::cout << "Dog assign constructor has been called" << std::endl;
+	std::cout << "Cat assign constructor has been called" << std::endl;
 	if (this == &ins)
 		return *this;
-	this->_type = ins._type;
-	this->_brain = new Brain(*ins._brain);
-	// *this->_brain = *ins._brain;
+	_type = ins._type;
+	Animal	*cpThis;
+	const Animal	*cpClone;
+	if (this == (&ins))
+		return (*this);
+	cpThis = this;
+	cpClone = &ins;
+	*cpThis = *cpClone;
+	*this->_brain = (&ins)->getBrain();
 	return *this;
 }
 
@@ -56,7 +64,7 @@ void Dog:: makeSound() const{
 	std::cout << "wouf wouf" << std::endl << std::endl;
 }
 
-Brain& Dog::getBrain(){
+Brain& Dog::getBrain() const{
 	return *_brain;
 }
 

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:05:48 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/13 16:03:11 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:05:00 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Cat::Cat(){
 }
 
 Cat::Cat(std::string n){
+	(void) n;
 	std::cout << "Cat constructor has been called" << std::endl;
 	_type = "Cat";
 }

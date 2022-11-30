@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:43:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/14 20:19:52 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:17:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Animal::Animal(){
 }
 
 Animal::Animal(std::string n){
+	(void)n;
 	std::cout << "Animal constructor has been called" << std::endl;
 	_type = "Animal";
 }

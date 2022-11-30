@@ -8,6 +8,7 @@ WrongCat::WrongCat(){
 }
 
 WrongCat::WrongCat(std::string n){
+	(void) n;
 	std::cout << "WrongCat constructor has been called" << std::endl;
 	_type = "WrongCat";
 }
