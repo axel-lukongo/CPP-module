@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/16 01:47:24 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/01 13:19:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat & ins){
 }
 Bureaucrat& Bureaucrat::operator =(const Bureaucrat & ins){
 	std::cout << "Bureaucrat assign constructor has been called" << std::endl;
+	_grade = ins._grade;
 	return *this;
 }
 

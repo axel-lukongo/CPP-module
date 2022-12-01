@@ -7,7 +7,7 @@ ShrubberyCreationForm::ShrubberyCreationForm():Form("shrubbery", 137, 145)
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name): Form(name, 137, 145){
 	std::cout << "shrubbery constructor" << std::endl;
-	_target = name;
+	_target = name + "_Shrubbery";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &in):Form(in){
@@ -17,6 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &in):Fo
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &in){
 std::cout << "shrubbery assign constructor" << std::endl;
+_target = in._target;
 return *this;
 }
 

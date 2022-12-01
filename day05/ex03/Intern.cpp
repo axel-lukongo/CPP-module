@@ -1,6 +1,6 @@
 #include "Intern.hpp"
 
-Intern::Intern(/* args */)
+Intern::Intern()
 {
 	std::cout << "intern constructor" << std::endl;
 }
@@ -9,20 +9,22 @@ Intern::Intern(Intern & ins){
 	*this = ins;
 }
 Intern & Intern::operator=(Intern & ins){
-	(void) ins;
+	
 	return *this;
 }
 
 
 Intern::~Intern()
 {
+	std::cout << "intern destructor has been called" << std::endl;
 }
 
 Form* Intern::makeForm(std::string name_Form, std::string target_Form){
 	std::string name[] = {std::string("shrubbery creation"), std::string("robotomy request"),
-	std::string("presidential pardonF")};
-	Form * action[] = {new presidentialpardonForm(target_Form), new ShrubberyCreationForm(target_Form), 
-	new RobotomyRequestForm(target_Form)};
+	std::string("presidential pardon")};
+	Form * action[] = {new ShrubberyCreationForm(target_Form), new RobotomyRequestForm(target_Form),
+	new presidentialpardonForm(target_Form), 
+	};
 	for (int i = 0; i < 3; ++i)
 	{
 		if (name[i] == name_Form)

@@ -16,6 +16,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & in):Form(in
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &in){
 std::cout << "Robotomy assign constructor" << std::endl;
+_target = in._target;
 return *this;
 }
 
