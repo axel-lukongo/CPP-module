@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/02 13:24:18 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:58:16 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,20 @@ int Bureaucrat::get_grade() const {
 
 std::string Bureaucrat::get_name() const{
 	return _name;
+}
+
+void Bureaucrat::signForm(Form & the_form){
+	if (_grade <= the_form.get_grade_sign())
+	{
+		std::cout << "bureaucrat "<< _name <<" signed the form"
+		<< std::endl << std::endl;
+	}
+	else
+	{
+		std::cout << "bureaucrat " << _name << " couldn’t sign form because grade is too low."
+		<< std::endl << std::endl;
+		throw GradeTooLowException();
+	}
 }
 
 std::ostream & operator << (std::ostream & out, const Bureaucrat &in){

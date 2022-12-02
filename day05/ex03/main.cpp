@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/02 12:43:09 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 14:08:54 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(){
 		Form*   rrf;
 		rrf = someRandomIntern.makeForm("presidential pardon", "the prisoner");
 		Bureaucrat perso1("JEFREY", 1);
-		rrf->signForm();
+		perso1.signForm(*rrf);
 		rrf->beSigned(perso1);
 		rrf->execute(perso1);
 	}
@@ -75,7 +75,7 @@ int main(){
 		Form*   rrf;
 		rrf = someRandomIntern.makeForm("presidential pardon", "the prisoner");
 		Bureaucrat perso1("JEFREY", 80);
-		rrf->signForm();
+		perso1.signForm(*rrf);
 		rrf->beSigned(perso1);
 		rrf->execute(perso1);
 	}

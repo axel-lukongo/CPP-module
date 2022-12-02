@@ -55,7 +55,7 @@ std::ostream & operator << (std::ostream & out, const Form &in){
 	return out;
 }
 
-void Form::beSigned(Bureaucrat & bu1){
+void Form::beSigned(Bureaucrat const & bu1){
 		// std::cout << bu1.get_grade() << " je suis ici \n\n";
 		// std::cout << _grade_sign << " le signe \n\n";
 	if (_grade_sign >= bu1.get_grade()){
@@ -65,9 +65,24 @@ void Form::beSigned(Bureaucrat & bu1){
 		throw Bureaucrat::GradeTooLowException();
 }
 
-void Form::signForm(){
-	if (_is_signe == true)
-		std::cout << "bureaucrat signed the form" << std::endl << std::endl;
-	else
-		std::cout << "bureaucrat couldn’t sign form because reason." << std::endl << std::endl;
+void	Form::execute2( Bureaucrat const &executor )
+{
+	if (this->_is_signe == false)
+	{
+		std::cerr << executor << " can not execute " << *this << " due to unsigned form" << std::endl;
+		throw (Bureaucrat::GradeTooLowException());
+	}
+	else if ((&executor)->get_grade() > this->_grade_exec)
+	{
+		std::cerr << executor << " can not execute " << *this << " due to his lower grade than the form" << std::endl;
+		throw (Bureaucrat::GradeTooLowException());
+	}
+	executor.executeForm(*this);
 }
+
+// void Form::signForm(){
+// 	if (_is_signe == true)
+// 		std::cout << "bureaucrat signed the form" << std::endl << std::endl;
+// 	else
+// 		std::cout << "bureaucrat couldn’t sign form because reason." << std::endl << std::endl;
+// }

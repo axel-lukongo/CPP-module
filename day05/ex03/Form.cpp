@@ -54,7 +54,7 @@ std::ostream & operator << (std::ostream & out, const Form &in){
 	return out;
 }
 
-void Form::beSigned(Bureaucrat & bu1){
+void Form::beSigned(Bureaucrat const & bu1){
 	if (_grade_sign >= bu1.get_grade()){
 		_is_signe = true;
 		std::cout <<"\033[1;32m" <<bu1.get_name()<< " signed\033[0m" << std::endl;
@@ -63,11 +63,9 @@ void Form::beSigned(Bureaucrat & bu1){
 		throw Bureaucrat::GradeTooLowException();
 }
 
-void Form::signForm(){
-	if (_is_signe == true)
-		std::cout <<"\033[1;31m" <<_name<< " signed the form\033[0m" << std::endl;
-		// std::cout << "bureaucrat signed the form" << std::endl << std::endl;
-	else
-		std::cout <<"\033[1;31m" <<_name<< " couldn't signed signe the form\033[0m" << std::endl;
-		// std::cout << "bureaucrat couldn’t sign form because reason." << std::endl << std::endl;
-}
+// void Form::signForm(){
+// 	if (_is_signe == true)
+// 		std::cout <<"\033[1;31m" <<_name<< " signed the form\033[0m" << std::endl;
+// 	else
+// 		std::cout <<"\033[1;31m" <<_name<< " couldn't signed signe the form\033[0m" << std::endl;
+// }

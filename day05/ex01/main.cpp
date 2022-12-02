@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/16 12:31:48 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 14:10:41 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(){
 		Bureaucrat perso1("jefrey", 25);
 		Form mandat("mandat", 24, 24);
 		mandat.beSigned(perso1);
-		mandat.signForm();
+		perso1.signForm(mandat);
 	}
 	catch(const std::exception& e)
 	{
@@ -36,7 +36,7 @@ int main(){
 		Bureaucrat perso2("jefrey", 25);
 		Form mandat1("mandat", 24, 25);
 		mandat1.beSigned(perso2);
-		mandat1.signForm();
+		perso2.signForm(mandat1);
 	}
 	catch(const std::exception& e)
 	{
@@ -51,7 +51,7 @@ int main(){
 		Bureaucrat perso3("jefrey", 25);
 		Form mandat2("mandat", 24, 151);
 		mandat2.beSigned(perso3);
-		mandat2.signForm();
+		perso3.signForm(mandat2);
 	}
 	catch(const std::exception& e)
 	{

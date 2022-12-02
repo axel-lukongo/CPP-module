@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat
 {
@@ -22,6 +24,8 @@ public:
 	virtual std::string get_name() const;
 	void increment();
 	void decrement();
+	void signForm(Form & the_form);
+	void executeForm(Form const &form) const;
 
 	class GradeTooHighException : public std::exception{
 		public:
