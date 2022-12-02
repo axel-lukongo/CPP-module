@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/01 21:13:39 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:24:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Bureaucrat::Bureaucrat(/* args */)
 Bureaucrat::Bureaucrat(std::string name,int grade):_name(name){
 	std::cout << "constructor has been called" << std::endl;
 		if (grade < 1)
-			throw GradeTooLowException();
-		else if (grade > 150)
 			throw GradeTooHighException();
+		else if (grade > 150)
+			throw GradeTooLowException();
 		else
 			_grade = grade;
 }
@@ -43,15 +43,15 @@ Bureaucrat::~Bureaucrat()
 }
 
 void Bureaucrat::increment(){
-	if (_grade < 150)
-		_grade += 1;
+	if (_grade > 1)
+		_grade -= 1;
 	else
 		throw GradeTooHighException();
 }
 
 void Bureaucrat::decrement(){
-	if (_grade > 1)
-		_grade -= 1;
+	if (_grade < 150)
+		_grade += 1;
 	else
 		throw GradeTooLowException();
 }
