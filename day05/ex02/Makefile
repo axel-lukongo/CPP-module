@@ -17,7 +17,7 @@ $(NAME): $(OBJS)
 
 clean:
 	clear
-	$(RM) $(OBJS) $(DEPS)
+	$(RM) $(OBJS) $(DEPS) *_Shrubbery
 
 fclean: clean
 	$(RM) $(NAME)

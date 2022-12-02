@@ -36,7 +36,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
 	if (this->isSign() &&  executor.get_grade() < this->get_grade_exec()){
-		std::ofstream file(_target.substr(0, _target.size()).append("_Shrubbery"));
+		std::string str = _target.substr(0, _target.size()) + "_Shrubbery";
+		std::ofstream file(str.c_str());
 		std::cout<< std::endl << executor.get_name() << " execute " << this->_target << std::endl << std::endl;
 		if(file.is_open()){
 			file <<  "           {{ }{\n"

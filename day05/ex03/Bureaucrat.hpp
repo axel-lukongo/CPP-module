@@ -1,6 +1,11 @@
 #ifndef BUREAUCRAT_H
 #define BUREAUCRAT_H
 #include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+#include <stdexcept>
 
 class Bureaucrat
 {
