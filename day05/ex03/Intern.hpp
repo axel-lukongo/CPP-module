@@ -10,7 +10,7 @@
 class Intern
 {
 private:
-	/* data */
+
 public:
 	Intern();
 	Intern(Intern & ins);

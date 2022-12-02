@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/02 14:08:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:46:23 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int main(){
 		Bureaucrat perso1("JEFREY", 2);
 		rrf->beSigned(perso1);
 		rrf->execute(perso1);
+		delete rrf;
 	}
 	catch(const std::exception& e)
 	{
@@ -61,6 +62,7 @@ int main(){
 		perso1.signForm(*rrf);
 		rrf->beSigned(perso1);
 		rrf->execute(perso1);
+		delete rrf;
 	}
 	catch(const std::exception& e)
 	{
