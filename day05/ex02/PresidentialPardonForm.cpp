@@ -16,6 +16,7 @@ presidentialpardonForm::presidentialpardonForm(const presidentialpardonForm &in)
 
 presidentialpardonForm & presidentialpardonForm::operator=(const presidentialpardonForm &in){
 std::cout << "presidential assign constructor" << std::endl;
+_target = in._target;
 return *this;
 }
 

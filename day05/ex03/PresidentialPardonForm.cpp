@@ -29,7 +29,8 @@ presidentialpardonForm::~presidentialpardonForm()
 void presidentialpardonForm::execute(Bureaucrat const & executor)const{
 	if (this->isSign() &&  executor.get_grade() < this->get_grade_exec()){
 		std::cout<< std::endl << executor.get_name() << " execute " << this->_target << std::endl;
-		std:: cout << _target<<" is to forgive by Zaphod Beeblebrox" << std::endl << std::endl;
+		std::cout << "\033[1;32m"<<_target <<" is to forgive by Zaphod Beeblebrox\033[0m"  << std::endl<< std::endl;
+		// std:: cout << _target<<" is to forgive by Zaphod Beeblebrox" << std::endl << std::endl;
 	}
 	else
 		throw Bureaucrat::GradeTooLowException();

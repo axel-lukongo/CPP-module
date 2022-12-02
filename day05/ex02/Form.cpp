@@ -5,7 +5,7 @@
 // }
 
 Form::Form(std::string name, int grade_exec, int grade_sign):
-_name(name), _grade_exec(grade_exec), _grade_sign(grade_sign), _is_signe(false){
+_name(name), _grade_sign(grade_sign), _grade_exec(grade_exec), _is_signe(false){
 	std::cout << "constructor has been called" << std::endl;
 
 		if (grade_exec < 1 || grade_sign < 1)
@@ -15,7 +15,7 @@ _name(name), _grade_exec(grade_exec), _grade_sign(grade_sign), _is_signe(false){
 }
 
 Form::Form(const Form & ins):
-_name(ins._name), _grade_exec(ins._grade_exec), _grade_sign(ins._grade_sign){
+_name(ins._name), _grade_sign(ins._grade_sign), _grade_exec(ins._grade_exec){
 	std::cout << "Copy constructor has been called" << std::endl;
 	*this = ins;
 }
@@ -23,7 +23,8 @@ _name(ins._name), _grade_exec(ins._grade_exec), _grade_sign(ins._grade_sign){
 
 Form& Form::operator =(const Form & ins){
 	std::cout << "assign constructor has been called" << std::endl;
-	*this = ins;
+	// *this = ins;
+	_is_signe = ins._is_signe;
 	return *this;
 }
 

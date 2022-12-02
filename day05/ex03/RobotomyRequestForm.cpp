@@ -33,9 +33,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor)const{
 		srand(time(NULL));
 		int ran = rand() % 2;
 		if(ran == 0)
-			std::cout << _target <<" has been succesfuly robotomis"  << std::endl<< std::endl;
+			std::cout << "\033[1;32m"<<_target <<" has been succesfuly robotomis\033[0m"  << std::endl<< std::endl;
 		else
-			std::cout << "robotomis failled" << std::endl<< std::endl;
+			std::cout << "\033[1;31mrobotomis failled\033[0m" << std::endl<< std::endl;
 	}
 	else
 		throw Bureaucrat::GradeTooLowException();

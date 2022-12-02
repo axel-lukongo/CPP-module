@@ -17,6 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &in):Fo
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &in){
 std::cout << "shrubbery assign constructor" << std::endl;
+_target = in._target;
 return *this;
 }
 

@@ -9,7 +9,7 @@ Intern::Intern(Intern & ins){
 	*this = ins;
 }
 Intern & Intern::operator=(Intern & ins){
-	
+	(void) ins;
 	return *this;
 }
 
@@ -29,7 +29,7 @@ Form* Intern::makeForm(std::string name_Form, std::string target_Form){
 	{
 		if (name[i] == name_Form)
 		{
-			std::cout << "Intern creates" << name[i] << std::endl;
+			std::cout << "\033[1;32mIntern creates " << name[i] <<"\033[0m"<< std::endl;
 			if (i != 2)
 				delete action[2];
 			return action[i];

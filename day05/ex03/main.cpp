@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:35:22 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/01 13:36:29 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:43:09 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,26 @@
 #include "Intern.hpp"
 
 int main(){
-	// try
-	// {
-	// 	Intern  someRandomIntern;
-	// 	Form*   rrf;
-	// 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	// 	Bureaucrat perso1("DESTRO", 45);
-	// 	rrf->beSigned(perso1);
-	// 	rrf->execute(perso1);
-	// 	delete rrf;
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << '\n';
-	// }
+	try
+	{
+	std::cout << "\033[1;33m-----------------------robotomy-------------------- \033[0m"<<std::endl;
+		Intern  someRandomIntern;
+		Form*   rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		Bureaucrat perso1("DESTRO", 5);
+		rrf->beSigned(perso1);
+		rrf->execute(perso1);
+		delete rrf;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << std::endl;
 	std::cout << std::endl;
 	try
 	{
+	std::cout << "\033[1;33m-----------------------Shrubbery-------------------- \033[0m"<<std::endl;
 		Intern  someRandomIntern;
 		Form*   rrf;
 		rrf = someRandomIntern.makeForm("shrubbery creation", "garden");
@@ -47,19 +49,38 @@ int main(){
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// std::cout << std::endl;
-	// std::cout << std::endl;
-	// try
-	// {
-	// 	Intern  someRandomIntern;
-	// 	Form*   rrf;
-	// 	rrf = someRandomIntern.makeForm("shru tion", "garden");
-	// 	Bureaucrat perso1("JEFREY", 45);
-	// 	rrf->beSigned(perso1);
-	// 	rrf->execute(perso1);
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << '\n';
-	// }
+	std::cout << std::endl;
+	std::cout << std::endl;
+	try
+	{
+	std::cout << "\033[1;33m-----------------------presidential-------------------- \033[0m"<<std::endl;
+		Intern  someRandomIntern;
+		Form*   rrf;
+		rrf = someRandomIntern.makeForm("presidential pardon", "the prisoner");
+		Bureaucrat perso1("JEFREY", 1);
+		rrf->signForm();
+		rrf->beSigned(perso1);
+		rrf->execute(perso1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+		std::cout << std::endl;
+	std::cout << std::endl;
+	try
+	{
+		std::cout << "\033[1;33m-----------------------Wrong test-------------------- \033[0m"<<std::endl;
+		Intern  someRandomIntern;
+		Form*   rrf;
+		rrf = someRandomIntern.makeForm("presidential pardon", "the prisoner");
+		Bureaucrat perso1("JEFREY", 80);
+		rrf->signForm();
+		rrf->beSigned(perso1);
+		rrf->execute(perso1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
