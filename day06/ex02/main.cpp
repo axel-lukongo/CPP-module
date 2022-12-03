@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:29:44 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/22 18:19:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:04:59 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "ClassC.hpp"
 
 Base * generate(void){
-	srand((unsigned)time(NULL));
 	int i = rand() % 3;
 	Base *ptr;
 	switch (i)
@@ -51,7 +50,7 @@ void identify(Base& p){
 		dynamic_cast <A &> (p);
 		std::cout << "p istype of A" << std::endl;
 	}
-	catch(const std::exception e)
+	catch(const std::exception &bc)
 	{
 	}
 	try
@@ -59,7 +58,7 @@ void identify(Base& p){
 		dynamic_cast <B &>(p);
 		std::cout << "p istype of B" << std::endl;
 	}
-	catch(const std::exception e)
+	catch(const std::exception &bc)
 	{
 	}
 	try
@@ -67,18 +66,15 @@ void identify(Base& p){
 		dynamic_cast<C &>(p);
 		std::cout << "p istype of C" << std::endl;
 	}
-	catch(const std::exception e)
+	catch(const std::exception &bc)
 	{
 	}
-	
-	
-
 }
 
 int main(){
 
 Base *ptr;
-// srand((unsigned)time(NULL));
+srand((unsigned)time(NULL));
 
 for (int i = 0; i < 10; i++)
 {

@@ -1,7 +1,7 @@
 #ifndef Data_H
 #define Data_H
 
-#include <cstdint>
+#include <stdint.h>
 #include<iostream>
 class Data
 {

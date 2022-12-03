@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:35:37 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/22 17:19:39 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:26:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ int main(){
 	
 	ptr = deserialize(raw);
 	std::cout << ptr->test << std::endl;
+
+	delete ptr;
 }

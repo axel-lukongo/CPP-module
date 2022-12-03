@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 17:22:52 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/26 20:34:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:17:25 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void converter::is_int(){
 
 void converter::is_float(){
 	float val = atof(_str.c_str());
-	int num = std::stoi(_str);
 	int n = val;
 		if (val - (double)n == 0) {
 			std::cout.precision(1);
@@ -171,7 +170,6 @@ void converter::print_impossible(){
 
 
 void converter::choose_type(int i){
-// int i = find_type(_str);
 
 switch (i)
 {
@@ -199,6 +197,5 @@ switch (i)
 	default:
 		print_impossible();
 		break;
-
 }
 }
