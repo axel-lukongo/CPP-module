@@ -5,20 +5,20 @@
 
 template< typename T >
 
-T const & max (T const &x, T const & y){
-	return ((x >= y) ? x : y);
+T max (T x, T y){
+	return ((x > y) ? x : y);
 }
 
 template< typename T >
-T & min (T const &x, T const & y){
-	return ((x >= y) ? x : y);
+T min (T x, T y){
+	return ((x < y) ? x : y);
 }
 
 template< typename T >
-void swap(T x, T y){
+void swap(T &x, T &y){
 	T tmp = x;
-	x = y
-	t = tmp;
+	x = y;
+	y = tmp;
 }
 
 #endif // !TMP_H
