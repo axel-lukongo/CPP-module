@@ -3,6 +3,7 @@
 #include<iostream>
 #include <exception>
 #include <string>
+#include <stdlib.h>
 
 template <typename T = int>
 class Array
@@ -20,7 +21,6 @@ public:
 		if(n > 0)
 		{
 			_tab = new T[n];
-
 		}
 		else
 			_tab = NULL;
