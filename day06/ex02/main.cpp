@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:29:44 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/03 23:04:59 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/05 21:34:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,16 @@ void identify(Base* p){
 void identify(Base& p){
 	try
 	{
-		dynamic_cast <A &> (p);
+		(void)dynamic_cast <A &> (p);
 		std::cout << "p istype of A" << std::endl;
+		
 	}
 	catch(const std::exception &bc)
 	{
 	}
 	try
 	{
-		dynamic_cast <B &>(p);
+		(void)dynamic_cast <B &>(p);
 		std::cout << "p istype of B" << std::endl;
 	}
 	catch(const std::exception &bc)
@@ -63,7 +64,7 @@ void identify(Base& p){
 	}
 	try
 	{
-		dynamic_cast<C &>(p);
+		(void)dynamic_cast<C &>(p);
 		std::cout << "p istype of C" << std::endl;
 	}
 	catch(const std::exception &bc)
@@ -78,9 +79,13 @@ srand((unsigned)time(NULL));
 
 for (int i = 0; i < 10; i++)
 {
+	std::cout << "--------------------with a reference---------------------";
 	ptr = generate();
+	std::cout << std::endl;
 	identify(ptr);
+	std::cout << "--------------------with a pointer-----------------------"<< std::endl;
 	identify(*ptr);
+//	std::cout << std::endl;
 	delete ptr;
 }
 
