@@ -4,7 +4,9 @@
 #include <vector>
 #include <iostream>
 #include <exception>
-
+#include <string>
+#include <algorithm>
+#include <list>
 template<typename T>
 void easyfind(T param, int val){
 typename T::const_iterator it;

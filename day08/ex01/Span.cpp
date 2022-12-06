@@ -6,13 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:10:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/28 21:55:59 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:01:12 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(void){
+Span::Span(void): _size_max(0), _my_vector(std::vector<int>()){
 	
 }
 
@@ -53,10 +53,38 @@ void Span::addNumber(int num){
 	std::cout << "addNumber has been called" << std::endl;
 }
 
-void Span::shortestSpan(){
-	
+int Span::shortestSpan(){
+	if (_my_vector.size() <= 1)
+		throw std::exception();
+	std::sort(_my_vector.begin(), _my_vector.end());
+	std::vector<int>::iterator it;
+	int val = 0;
+	int ret = *(_my_vector.end()-1);
+	for (it = _my_vector.begin(); it != _my_vector.end(); it++){
+		if(it != _my_vector.end() && (*it - val) < ret)
+			ret = *it - val;
+		val = *it;
+	}
+	return ret;
 }
 
-void Span::longestSpan(){
-	
+int Span::longestSpan(){
+	if (_my_vector.size() <= 1)
+		throw std::exception();
+	std::sort(_my_vector.begin(), _my_vector.end());
+	return (_my_vector[_my_vector.size()-1] - _my_vector[0]);
+}
+
+void Span::print_vec(){
+	std::vector<int>::iterator it;
+	if (_my_vector.size() <= 1)
+		std::cout << "the vector doesn't have enought element" << std::endl;
+	else{
+		std::cout << "numbers: ";
+		for(it = _my_vector.begin(); it != _my_vector.end(); it++){
+			std::cout << "|";
+			std::cout << *it << " ";
+		}
+	}
+	std::cout << std::endl;
 }
