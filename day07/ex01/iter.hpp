@@ -13,4 +13,17 @@ void iter(T tab[], int size, void(*f)(T val)){
 		f(tab[i]);
 }
 
+class ft_iter
+{
+private:
+	int _n;
+public:
+	ft_iter():_n(42){}
+	int get(void)const{return _n;}
+	~ft_iter(){};
+};
+std::ostream & operator << (std::ostream & out, const ft_iter &in){
+	out << in.get();
+	return out;
+}
 #endif // !ITER_H

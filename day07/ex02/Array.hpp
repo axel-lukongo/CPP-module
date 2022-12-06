@@ -4,7 +4,8 @@
 #include <exception>
 #include <string>
 #include <stdlib.h>
-
+# include <cstring>
+# include <climits>
 template <typename T = int>
 class Array
 {
@@ -18,12 +19,15 @@ public:
 		std::cout << "default constructor has been called"<< std::endl;
 	}
 	Array(unsigned int n):_size_max(n){
-		if(n > 0)
+		if(n > 0 && n <= INT_MAX)
 		{
 			_tab = new T[n];
+			bzero(this->_tab, sizeof(T) * n);
 		}
-		else
-			_tab = NULL;
+		else{
+			throw  (Overflow());
+		}
+			// _tab = NULL;
 		std::cout << "constructor has been called"<< std::endl;
 	}
 
