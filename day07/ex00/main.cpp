@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:39:26 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/06 12:36:06 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:12:02 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,16 @@ int main()
 		std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 		std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	}
+	// {
+	// 	std::cout << std::endl;
+	// 	std::cout << "-------------------wrong test------------------" <<std::endl;
+	// 	float c = 124.3536;
+	// 	int d = 123;
+	// 	std::cout << "c = " << c << ", d = " << d << std::endl;
+	// 	::swap(c, d);
+	// 	std::cout << "------swap-----" << std::endl;
+	// 	std::cout << "c = " << c << ", d = " << d << std::endl;
+	// 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	// 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	// }
 }
