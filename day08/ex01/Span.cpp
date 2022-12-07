@@ -6,13 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:10:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/06 19:01:12 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:13:49 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(void): _size_max(0), _my_vector(std::vector<int>()){
+Span::Span(void): _size_max(0), _my_vector(0){
 	
 }
 
@@ -23,12 +23,12 @@ Span::Span(unsigned int N): _size_max(N), _my_vector(0)
 	std::cout << "constructor has been called" <<std::endl;
 }
 
-Span::Span(Span & ins){
+Span::Span(Span const & ins){
 	*this = ins;
 	std::cout << "copy constructor has been called" << std::endl;
 }
 
-Span& Span::operator=(Span & ins){
+Span& Span::operator=(Span const & ins){
 	_size_max = ins._size_max;
 	_my_vector = ins._my_vector;
 	*this = ins;
@@ -50,7 +50,7 @@ void Span::addNumber(int num){
 	}
 	else
 		throw std::exception();
-	std::cout << "addNumber has been called" << std::endl;
+	std::cout << "We add: " << num << std::endl;
 }
 
 int Span::shortestSpan(){
