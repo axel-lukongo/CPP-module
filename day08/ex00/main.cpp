@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:40:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/12/06 16:09:28 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:48:58 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,15 @@ int main(){
 	try
 	{
 		int	value = 6;
+		std::vector<int>::iterator it;
+		std::vector<int>::iterator ite = v1.end();
 
-		for_each(v1.begin(), v1.end(), my_display);
+
+		for(it = v1.begin(); it < ite; it++)
+		{
+			std::cout << " | "<< *it;
+		}
+		// for_each(v1.begin(), v1.end(), my_display);
 
 		std::cout << std::endl << "\033[1;32mi looking for " << value << " in my vector\033[0m" <<std::endl;
 		easyfind(v1, value);
@@ -45,10 +52,18 @@ int main(){
 		v2.push_back('{');
 		v2.push_back('B');
 		v2.push_back('P');
-		std::vector<int>::iterator it;
+		// std::vector<int>::iterator it;
+		std::vector<char>::iterator it;
+		std::vector<char>::iterator ite = v2.end();
 		
 		int	value = 123;
-		for_each(v2.begin(), v2.end(), my_display);
+
+
+		for(it = v2.begin(); it < ite; it++)
+		{
+			std::cout << " | "<< *it;
+		}
+		// for_each(v2.begin(), v2.end(), my_display);
 		std::cout << std::endl << "\033[1;32mi looking for " << value << " in my vector\033[0m" <<std::endl;
 		easyfind(v2, value);
 		std::cout << std::endl;

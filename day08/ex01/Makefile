@@ -4,7 +4,7 @@ RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98
 CPPFLAGS = -MMD
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)

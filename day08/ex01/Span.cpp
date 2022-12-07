@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:10:33 by alukongo          #+#    #+#             */
-/*   Updated: 2022/11/29 19:13:49 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:37:52 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Span::Span(Span const & ins){
 Span& Span::operator=(Span const & ins){
 	_size_max = ins._size_max;
 	_my_vector = ins._my_vector;
-	*this = ins;
+	// *this = ins;
 	return *this;
 	std::cout << "copy constructor has been called" << std::endl;
 }
